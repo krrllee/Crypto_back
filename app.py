@@ -13,7 +13,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 
 
 API_URL = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest"
-API_KEY = "af2bb273-09aa-4b06-955e-a0d7bf570f97"
+API_KEY = "API_KEY"
 
 app = Flask(__name__)
 app.secret_key = 'random secret key'
@@ -33,8 +33,8 @@ app.config["Access-Control-Allow-Headers"]="Content-Type"
 oauth = OAuth(app)
 google = oauth.register(
     name='google',
-    client_id='483612200058-5tfblq7tf82175hd5l26pmm7tfqdjtfk.apps.googleusercontent.com',
-    client_secret='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',
+    client_id='CLIENT-ID',
+    client_secret='CLIENT-SECRET',
     access_token_url='https://accounts.google.com/o/oauth2/token',
     access_token_params=None,
     authorize_url='https://accounts.google.com/o/oauth2/auth',
@@ -250,7 +250,7 @@ def authorize():
 def get_cryptocurrencies():
     
     fetch_and_update_data()
-    api_key = 'af2bb273-09aa-4b06-955e-a0d7bf570f97'
+    api_key = 'API_KEY'
     url = f"https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY={api_key}"
     response = requests.get(url)
     data = response.json()
